@@ -1,0 +1,87 @@
+svg {
+    width: 100vmin;
+    height: 75vmin;
+    border: 0px dotted #f3f9f4;
+    position: absolute;
+    background: #ffffff02;
+  }
+  path,
+  circle {
+    stroke: #f3f9f4;
+    stroke-width: 4px;
+    fill: none;
+  }
+  circle {
+    animation: puck 5000ms infinite linear;
+  }
+  circle:nth-of-type(2) {
+    animation-delay: -2500ms;
+  }
+  path:nth-of-type(2) {
+    animation-delay: -1875ms;
+  }
+  path {
+    animation: paddle 1250ms -625ms infinite alternate ease-in-out;
+  }
+  body {
+    background: #16161c;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  
+  @keyframes puck {
+    25% {
+      transform: translate(-39px, -30.5px);
+    }
+    50% {
+      transform: translate(0px, -61px);
+    }
+    75% {
+      transform: translate(39px, -30.5px);
+    }
+  }
+  @keyframes paddle {
+    100% {
+      transform: translateY(60px);
+    }
+  }
+  
+  svg:nth-of-type(2) {
+    opacity: 1;
+    animation: none 12000ms infinite reverse ease-in-out;
+    transform: translate(-1px, 1px);
+  }
+  svg:nth-of-type(3) {
+    opacity: 1;
+    animation: none 6000ms infinite ease-in-out;
+    transform: translateX(-2px, -1px);
+  }
+  @keyframes noise {
+    0% {
+      clip-path: inset(0 40% 0 61%);
+    }
+    20% {
+      clip-path: inset(0 92% 0 1%);
+    }
+    40% {
+      clip-path: inset(0 43% 0 1%);
+    }
+    60% {
+      clip-path: inset(0 25% 0 58%);
+    }
+    80% {
+      clip-path: inset(0 54% 0 7%);
+    }
+    100% {
+      clip-path: inset(0 58% 0 43%);
+    }
+  }  
